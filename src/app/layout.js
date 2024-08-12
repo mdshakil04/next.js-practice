@@ -1,5 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/Components/Navbar";
+import Footer from "@/Components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,18 +14,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav>
-          <ul className=" flex justify-evenly bg-emerald-200 py-4">
-            <li>About</li>
-            <li>Portfolio</li>
-            <li>Gallery</li>
-            <li>Contact</li>
-          </ul>
-        </nav>
+       <Navbar></Navbar>
         {children}
-        <footer className=" bg-emerald-200 text-center">
-          <h6>All Rights resurved by Next Hero</h6>
-        </footer>
+        <Footer></Footer>
       </body>
     </html>
   );
