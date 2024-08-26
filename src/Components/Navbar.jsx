@@ -22,6 +22,10 @@ const Navbar = () => {
         {
             title: "Services",
             path: '/services'
+        },
+        {
+            title: "Blogs",
+            path: '/blogs'
         }
     ]
     const handler = () => {
