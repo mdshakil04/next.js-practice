@@ -1,18 +1,21 @@
+import Link from "next/link";
 import React from "react";
 
 const page = () => {
   return (
-    <div className=" container mx-auto my-4">
-      <h2 className=" my-4 text-center">This is Blogs Page</h2>
+    <div className=" container mx-auto my-4  max-h-screen">
       <div className=" grid grid-cols-2 gap-2">
         {blogs.map((blog) => (
-          <div key={blog.id} className="border p-12 rounded-lg">
+          <div key={blog.id} className="border p-4 rounded-lg">
             <h2 className=" text-xl font-bold">{blog.title}</h2>
             <div className=" flex justify-between">
               <p className=" font-bold">{blog.author}</p>
               <p>{blog.date_published}</p>
             </div>
             <p>{blog.content}</p>
+            <button className=" bg-cyan-300 mt-2 p-2 rounded-lg">
+               View Details
+            </button>
           </div>
         ))}
       </div>
