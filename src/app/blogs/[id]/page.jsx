@@ -10,7 +10,7 @@ const page = ({ params }) => {
     <div className=" p-4 border-2 m-4">
       <h2 className=" text-3xl">{title}</h2>
       <div className=" flex justify-between">
-        <p className=" underline font-bold">{author}</p>
+        <p className=" underline font-bold">Author: {author}</p>
         <p>{date_published}</p>
       </div>
       <p>{content}</p>
