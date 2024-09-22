@@ -1,24 +1,19 @@
-import Link from "next/link";
 import React from "react";
 
-const page = () => {
+const page = ({ params }) => {
+  console.log(params.id);
+
+  const { title, content, author, date_published } = blogs.find(
+    (blog) => blog.id == params.id
+  );
   return (
-    <div className=" container mx-auto my-4 px-4 ">
-      <div className=" grid grid-cols-2 gap-2">
-        {blogs.map((blog) => (
-          <div key={blog.id} className="border p-4 rounded-lg">
-            <h2 className=" text-xl font-bold">{blog.title}</h2>
-            <div className=" flex justify-between">
-              <p className=" font-bold">{blog.author}</p>
-              <p>{blog.date_published}</p>
-            </div>
-            <p>{blog.content}</p>
-            <button className=" bg-cyan-300 mt-2 p-2 rounded-lg">
-              <Link href={`/blogs/${blog.id}`}>View Details</Link>
-            </button>
-          </div>
-        ))}
+    <div className=" p-4 border-2 m-4">
+      <h2 className=" text-3xl">{title}</h2>
+      <div className=" flex justify-between">
+        <p className=" underline font-bold">{author}</p>
+        <p>{date_published}</p>
       </div>
+      <p>{content}</p>
     </div>
   );
 };
