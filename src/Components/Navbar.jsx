@@ -5,7 +5,7 @@ import React from "react";
 
 const Navbar = () => {
     const pathName = usePathname();
-    const router = useRouter()
+    const router = useRouter();
     const links = [
         {
             title: "Home",
